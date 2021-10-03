@@ -1,6 +1,7 @@
 import React from 'react'
 import search from '../images/search.svg'
 import menu from '../images/menu.svg';
+import GroupItem from './GroupItem';
 
 
 export default function Groups() {
@@ -31,66 +32,10 @@ export default function Groups() {
                 </div>
                 {/* all groups */}
                 <div id="groups">
-                    <div id="1" className="h d-flex align-items-center">
-                        <h5 className="group-img">EM</h5>
-                        <h6 className="my-auto">Explore More</h6>
-                    </div>
-                    <div id="2" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-5th-Semester Lecture Discussion</h6>
-                    </div>
-                    <div id="3" className="h d-flex align-items-center left-nav">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-4th-Semester</h6>
-                    </div>
-                    <div id="4" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-6th-Semester</h6>
-                    </div>
-                    <div id="5" className="h d-flex align-items-center">
-                        <h5 className="group-img">EM</h5>
-                        <h6 className="my-auto">Explore More...</h6>
-                    </div>
-                    <div id="8" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-5th-Semester Lecture Discussion</h6>
-                    </div>
-                    <div id="6" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-4th-Semester</h6>
-                    </div>
-                    <div id="9" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-6th-Semester</h6>
-                    </div>
-                    <div id="10" className="h d-flex align-items-center">
-                        <h5 className="group-img">EM</h5>
-                        <h6 className="my-auto">Explore More...</h6>
-                    </div>
-                    <div id="12" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-5th-Semester Lecture Discussion</h6>
-                    </div>
-                    <div id="13" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-4th-Semester</h6>
-                    </div>
-                    <div id="14" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-6th-Semester</h6>
-                    </div>
-                    <div id="12" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-5th-Semester Lecture Discussion</h6>
-                    </div>
-                    <div id="13" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-4th-Semester</h6>
-                    </div>
-                    <div id="14" className="h d-flex align-items-center">
-                        <h5 className="group-img">DC</h5>
-                        <h6 className="my-auto">DDU-CE-6th-Semester</h6>
-                    </div>
+                    <GroupItem/>
+                    <GroupItem/>
+                    <GroupItem/>
+                    <GroupItem/>
                 </div>
             </div>
         </>

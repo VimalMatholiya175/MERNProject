@@ -1,11 +1,10 @@
 import React from 'react'
-import './style.css'
 import { Link } from "react-router-dom";
 
 export default function SignIn() {
     return (
         <div>
-            <div className="mycontainer">
+            <div className="acontainer">
                 <form action="" className="form">
                     <h1>Sign In</h1>
                     <input type="email" id="email" name="email" placeholder="Email" />
@@ -13,7 +12,7 @@ export default function SignIn() {
                     <div className="link">
                         <Link to="/abc">Forgot Password ?</Link>
                     </div>
-                    <input type="submit" value="Sign Up" className="mybtn" style={{display:'block',float: 'none', width: '80%',margin:'10px auto'}} />
+                    <input type="submit" value="Sign In" className="abtn" style={{display:'block',float: 'none', width: '80%',margin:'10px auto'}} />
                     <div className="link">
                         <Link to="/signup">New Here ?</Link>
                     </div>
