@@ -1,4 +1,3 @@
-
 body{
     margin: 0px;
     padding: 0px;
@@ -10,8 +9,7 @@ a{
     text-decoration: none;
 }
 
-/* CSS for SignIn and SignUp */
-
+/* SignIn or SignUp */
 
 .acontainer{
     height: 100vh;
@@ -80,7 +78,6 @@ input[type="reset"]{
 
 /* CSS For Home */
 
-
 .bg-transparent {
     background-color: transparent;
     border: none;
@@ -107,27 +104,43 @@ input[type="reset"]{
     height: 65px;
 }
 
-/* Groups ( left-side ) */
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent;
+}
 
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 30px;
+    outline: 1px solid slategrey;
+}
+
+
+/* SideBar */
+
+/* NavBar */
 .col-3 header{
     background-color: #2f2d52;
     color: rgb(245, 234, 234);
     height: 9%;
 }
 
-#search{
+/* Search */
+.search{
     background-color: white;
     height: 7%;
 }
 
-#groups{
+/* Groups */
+.all-groups{
     background-color: #3c3a5f;
     color: rgb(245, 234, 234);
     height: 84%; 
     overflow-y: auto;
 }
 
-/* Chats ( right-side ) */
+
+/* Main or GroupInfo ( right-side ) */
 
 .col-9 header{
     background-color: #5c5a8c;
@@ -145,15 +158,12 @@ footer{
     background-color: white;
 }
 
-#group-info{
+.group-info{
     background-color: #dcdef7;
 }
 
-#group-desc{
-    height: 20%;
-}
 
-#group-members{
+.group-members{
     height: 60%;
     overflow-y: auto;
 }
@@ -169,13 +179,3 @@ footer{
     background-color: #212529;
     color: white;
 }
-::-webkit-scrollbar {
-    width: 12px;
-    background-color: transparent;
-  }
-
-::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    border-radius: 30px;
-    outline: 1px solid slategrey;
-  }
