@@ -4,7 +4,7 @@ import menu from '../../images/menu.svg';
 export default function NavBar() {
     return (
         <>
-            <header className="d-flex justify-content-between align-items-center">
+            <header className="d-flex justify-content-between align-items-center" style={{backgroundColor: '#2f2d52'}}>
                 <h4 className="mx-2 my-auto">Classroom</h4>
                 <div className="mx-3 dropleft">
                     <button className="bg-transparent" id="add-group" data-bs-toggle="dropdown" aria-expanded="false">
