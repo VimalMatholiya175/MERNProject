@@ -27,12 +27,10 @@ router.post('/signup', [
         const password = await bcrypt.hash(req.body.password, salt);
 
         user = await User.create({name: req.body.name, email: req.body.email, password});
-        user.save();
 
         res.json({success:true})
     }
     catch (error) {
-        console.error(error.message);
         res.status(500).send("Internal Server Error");
       }
 })
@@ -60,7 +58,7 @@ router.post('/signin', [
 
         const data = {
             user: {
-                id: user.id
+                id: user._id
             }
         };
 
@@ -69,7 +67,6 @@ router.post('/signin', [
         res.json({success : true, authtoken});
     }
     catch (error) {
-        console.error(error.message);
         res.status(500).send("Internal Server Error");
       }
 })
