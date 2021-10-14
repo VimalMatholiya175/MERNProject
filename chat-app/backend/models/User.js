@@ -15,5 +15,9 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    groups : [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Groups'
+    }]
 })
-module.exports = mongoose.model('user',UserSchema);
+module.exports = mongoose.model('Users',UserSchema);

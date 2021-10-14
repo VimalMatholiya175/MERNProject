@@ -36,8 +36,8 @@ export default function SignIn() {
                 <form className="form">
                     <h1>Sign In</h1>
                     <h5 style={{color: 'red',textAlign : 'center'}}>{error}</h5>
-                    <input type="email" id="email" name="email" value={user.email} onChange={handleOnChange} placeholder="Email" />
-                    <input type="password" id="password" name="password" value={user.password} onChange={handleOnChange} placeholder="Password" />
+                    <input type="email" id="email" name="email" value={user.email} onChange={handleOnChange} placeholder="Email" required />
+                    <input type="password" id="password" name="password" value={user.password} onChange={handleOnChange} placeholder="Password" required />
                     <div className="link">
                         <Link to="/abc">Forgot Password ?</Link>
                     </div>
