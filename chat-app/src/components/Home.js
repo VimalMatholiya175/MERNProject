@@ -2,9 +2,15 @@ import React from 'react'
 import Main from './main/Main'
 import SideBar from './sidebar/SideBar'
 import GroupInfo from './groupinfo/GroupInfo';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
 
 export default function Home() {
+    
+    let location = useHistory();
+    if(!localStorage.getItem('authtoken'))
+    {
+        location.push('/signin');
+    }
     return (
         <>
             <div className="container-fluid" style={{ height: '100vh' }}>
@@ -13,6 +19,7 @@ export default function Home() {
                         <SideBar />
                     </div>
                     <div className="col-9 p-0 h-100">
+
                         <Router>
                             <Switch>
                                 <Route exact path="/">
