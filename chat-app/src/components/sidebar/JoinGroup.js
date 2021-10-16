@@ -21,7 +21,7 @@ export default function JoinGroup() {
     }
     return (
         <>
-            <Modal title="Join Group" id="Join">
+            <Modal title="Join Group" id="join">
                 <div className="mb-3">
                     <label htmlFor="groupcode" className="form-label">Group Code</label>
                     <input type="text" className="form-control" value={groupCode} onChange={handleOnChange} id="groupcode" required minLength={6} maxLength={6}/>
