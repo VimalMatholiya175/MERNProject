@@ -20,7 +20,7 @@ export default function CreateGroup() {
     }
     return (
         <>
-            <Modal title="Create Group" id="Create">
+            <Modal title="Create Group" id="create">
                 <div className="mb-3">
                     <label htmlFor="groupname" className="form-label">Group Name</label>
                     <input type="text" className="form-control" value={groupName} onChange={handleOnChange} id="groupname" required minLength={3} maxLength={20}/>

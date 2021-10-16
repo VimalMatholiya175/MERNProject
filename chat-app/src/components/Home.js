@@ -19,7 +19,6 @@ export default function Home() {
                         <SideBar />
                     </div>
                     <div className="col-9 p-0 h-100">
-
                         <Router>
                             <Switch>
                                 <Route exact path="/">
