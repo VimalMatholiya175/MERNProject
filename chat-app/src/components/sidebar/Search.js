@@ -1,13 +1,10 @@
 import React from 'react'
-import search from '../../images/search.svg'
 
 export default function Search() {
     return (
         <>
             <div className="d-flex align-items-center search">
-                <button className="bg-transparent mx-2">
-                    <img src={search} />
-                </button>
+                <i className="fa fa-search mx-2" style={{ fontSize: '21px', color: 'black' }}></i>
                 <input className="form-control shadow-none bg-transparent" type="text" placeholder="Search..." />
             </div>
         </>

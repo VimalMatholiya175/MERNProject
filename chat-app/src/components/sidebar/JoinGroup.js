@@ -1,27 +1,26 @@
-import React,{useState} from 'react'
+import React,{useState,useContext,useRef} from 'react'
+import GroupContext from '../../contexts/GroupContext';
 import Modal from '../Modal';
 
 export default function JoinGroup() {
+
+    const { joinGroup } = useContext(GroupContext);
     const [groupCode, setGroupCode] = useState("");
+    const closeBtnRef = useRef(null);
 
     const handleOnChange = (event) => {
         setGroupCode(event.target.value);
     }
     const handleOnClick = async (event) => {
         event.preventDefault();
-        let response = await fetch("http://localhost:4099/group/join",
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'authtoken': localStorage.getItem('authtoken') },
-                body: JSON.stringify({ groupCode })
-            }
-        );
-        response = await response.json();
+        joinGroup(groupCode);
         setGroupCode("");
+        closeBtnRef.current.click();
+
     }
     return (
         <>
-            <Modal title="Join Group" id="join">
+            <Modal title="Join Group" id="join" closeBtnRef={closeBtnRef}>
                 <div className="mb-3">
                     <label htmlFor="groupcode" className="form-label">Group Code</label>
                     <input type="text" className="form-control" value={groupCode} onChange={handleOnChange} id="groupcode" required minLength={6} maxLength={6}/>
