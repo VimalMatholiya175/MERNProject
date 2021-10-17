@@ -1,29 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import GroupContext from '../../contexts/GroupContext';
 import GroupItem from './GroupItem';
 
 export default function Groups() {
-    const [groups, setGroups] = useState([]);
 
-    const fetchAllGroups = async () =>{
-        let response = await fetch("http://localhost:4099/group/fetchAllGroups",
-            {
-                method: 'GET',
-                headers: {'authtoken': localStorage.getItem('authtoken') }
-            }
-        );
-        response = await response.json();
-        setGroups(response.groups);
-    }
-
-    useEffect(() =>{
+    const { groups, fetchAllGroups, setCurrentGroup, currentGroup } = useContext(GroupContext);
+    useEffect(() => {
         fetchAllGroups();
-    },[])
+    }, [])
 
+    const handleOnClick = (group) => {
+        if(currentGroup)
+            document.getElementById(currentGroup._id).style.backgroundColor='#3c3a5f'
+        setCurrentGroup(group);
+        document.getElementById(group._id).style.backgroundColor='rgb(47, 45, 82)'
+    }
     return (
         <>
             <div className="all-groups">
-                {groups.map(group =>{
-                    return <GroupItem key={group._id} groupId={group._id} groupName={group.groupName} />
+                {groups.map(group => {
+                    return ( 
+                    <span onClick={() => handleOnClick(group)}>
+                        <GroupItem key={group._id} groupId={group._id} groupName={group.groupName} />
+                    </span>)
                 })}
             </div>
         </>
