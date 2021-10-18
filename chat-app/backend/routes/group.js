@@ -75,12 +75,12 @@ router.get('/fetchAllGroups', fetchuser, async (req, res) =>{
         let user = await User.findOne({_id: req.user.id});
         let groupIds = user.groups;
 
-        let groups = [];
+        let groups = await Group.find({_id: {$in: groupIds}});
 
-        for(let groupId of groupIds){
-            let group = await Group.findOne({_id: groupId});
-            groups.push(group);            
-        }
+        // for(let groupId of groupIds){
+        //     let group = await Group.findOne({_id: groupId});
+        //     groups.push(group);            
+        // }
         res.json({success: true, groups});
 
     }
