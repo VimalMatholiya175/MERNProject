@@ -15,7 +15,7 @@ export default function NavBar() {
         <>
             <CreateGroup />
             <JoinGroup />
-            <header className="d-flex justify-content-between align-items-center" style={{ backgroundColor: '#2f2d52' }}>
+            <div className="d-flex justify-content-between align-items-center" style={{ backgroundColor: '#2f2d52',height: '9%', color: 'white' }}>
                 <h4 className="mx-2 my-auto">Classroom</h4>
                 <div className="mx-3 dropleft">
                     <button className="bg-transparent" id="add-group" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,7 +28,7 @@ export default function NavBar() {
                         <li><span className="dropdown-item" onClick={handleLogout}>Logout</span></li>
                     </ul>
                 </div>
-            </header>
+            </div>
         </>
     )
 }

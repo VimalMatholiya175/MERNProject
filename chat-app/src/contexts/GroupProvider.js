@@ -5,6 +5,7 @@ export default function GroupProvider(props) {
 
     const [currentGroup,setCurrentGroup] = useState(null);
     const [groups, setGroups] = useState([]);
+    const [messages, setMessages] = useState([]);
 
     const fetchAllGroups = async () => {
         let response = await fetch("http://localhost:4099/group/fetchAllGroups",
@@ -47,8 +48,40 @@ export default function GroupProvider(props) {
 
         }
     }
+
+    const sendMessage = async (message) =>{
+        let response = await fetch("http://localhost:4099/message/sendMessage",
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'authtoken': localStorage.getItem('authtoken') },
+                body: JSON.stringify({ message, groupId: currentGroup._id })
+            }
+        );
+        response = await response.json();
+        if(response.success){
+            setMessages(messages.concat(response.message));
+        }
+    }
+
+    const fetchMessages = async () =>{
+        console.log(currentGroup);
+        let response = await fetch(`http://localhost:4099/message/fetchMessages/${currentGroup._id}`,
+            {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json', 'authtoken': localStorage.getItem('authtoken') },
+            }
+            );
+            response = await response.json();
+            
+            console.log(response);
+            
+            if(response.success){
+                setMessages(response.messages);
+            }
+    }
+
     return (
-        <GroupContext.Provider value={{ groups, fetchAllGroups, createGroup, joinGroup, setCurrentGroup, currentGroup}}>
+        <GroupContext.Provider value={{ groups, fetchAllGroups, createGroup, joinGroup, setCurrentGroup, currentGroup, messages, sendMessage, fetchMessages}}>
             {props.children}
         </GroupContext.Provider>
     )

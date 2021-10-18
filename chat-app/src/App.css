@@ -109,10 +109,7 @@ input.btn-large{
 .h {
     height: 65px;
 }
-header{
-    color: white;
-    height: 9%;
-}
+
 ::-webkit-scrollbar {
     width: 12px;
     background-color: transparent;
@@ -123,15 +120,14 @@ header{
     outline: 1px solid slategrey;
 }
 
-/* SideBar */
 
-/* Search */
+/* sidebar/Search */
 .search{
     background-color: white;
     height: 7%;
 }
 
-/* Groups */
+/* sidebar/Groups */
 .all-groups{
     background-color: #3c3a5f;
     color: rgb(245, 234, 234);
@@ -139,24 +135,19 @@ header{
     overflow-y: auto;
 }
 
-
-
-/* Main or GroupInfo ( right-side ) */
-
-main {
-    height: 83%;
-    background-color: #dcdef7;
+/* sidebar/GroupItem */
+.active-group{
+    background-color: rgb(47, 45, 82);
 }
 
-footer{
-    height: 8%;
-    background-color: white;
+span, i{
+    cursor: pointer;
 }
+
 .group-members{
     height: 60%;
     overflow-y: auto;
 }
-
 
 .user-img{
     margin: 0px 15px;
