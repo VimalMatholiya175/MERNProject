@@ -15,7 +15,7 @@ export default function Messages() {
     <>
       <div style={{ height: '83%', backgroundColor: '#dcdef7' }}>
         {messages.map((message) =>{
-          return <MessageItem message={message} />
+          return <MessageItem key={message._id} message={message} />
         })}
       </div>
     </>
