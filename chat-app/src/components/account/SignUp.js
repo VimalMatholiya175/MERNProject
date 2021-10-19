@@ -1,26 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom";
+import UserContext from '../../contexts/user/UserContext';
 
 export default function SignUp() {
 
+    const { signUp } = useContext(UserContext);
     const [user, setUser] = useState({name: "", email: "", password: "", cpassword: ""});
     const [error, setError] = useState("");
     const location = useHistory();
 
     const handleOnChange = (event) => {
-        setUser({ ...user, [event.target.name]: event.target.value }); //Good
+        setUser({ ...user, [event.target.name]: event.target.value });
     }
     const handleOnClick = async (event) => {
         event.preventDefault();
         if (user.password === user.cpassword) {
-            let response = await fetch("http://localhost:4099/auth/signup",
-                {
-                    method: 'POST',
-                    headers: {'Content-Type':'application/json'},            
-                    body: JSON.stringify({name:user.name,email:user.email,password:user.password})
-                }
-            );
-            response = await response.json();
+            let response = await signUp(user.name, user.email, user.password);
             if(!response.success){
                 setError(response.error);
             }

@@ -1,5 +1,5 @@
 const express = require('express');
-const fetchuser = require('../middlewares/fetchuser');
+const authenticateUser = require('../middlewares/authenticateUser');
 const Group = require('../models/Group');
 const User = require('../models/User');
 const { body, validationResult } = require('express-validator');
@@ -18,7 +18,7 @@ const codeGenerator = () =>{
 }
 
 
-router.post('/create', fetchuser, [
+router.post('/create', authenticateUser, [
     body('groupName').isLength({ min: 3, max: 20 })
 ], async (req, res) => {
 
@@ -45,7 +45,7 @@ router.post('/create', fetchuser, [
 })
 
 
-router.post('/join', fetchuser, [
+router.post('/join', authenticateUser, [
     body('groupCode').isLength({ min: 6, max: 6 })
 ], async (req, res) => {
 
@@ -69,7 +69,7 @@ router.post('/join', fetchuser, [
     }
 })
 
-router.get('/fetchAllGroups', fetchuser, async (req, res) =>{
+router.get('/fetchAllGroups', authenticateUser, async (req, res) =>{
     try{
 
         let user = await User.findOne({_id: req.user.id});

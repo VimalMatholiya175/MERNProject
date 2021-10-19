@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react'
-import GroupContext from '../../contexts/GroupContext';
+import GroupContext from '../../contexts/group/GroupContext';
 import GroupItem from './GroupItem';
 
 export default function Groups() {

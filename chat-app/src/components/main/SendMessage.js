@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import GroupContext from '../../contexts/GroupContext';
+import GroupContext from '../../contexts/group/GroupContext';
 
 export default function SendMessage() {
 
@@ -11,7 +11,7 @@ export default function SendMessage() {
     }
 
     const handleOnClick = async () => {
-        sendMessage(message);
+        await sendMessage(message);
         setMessage("");
     }
 

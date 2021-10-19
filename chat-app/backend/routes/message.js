@@ -1,11 +1,9 @@
 const express = require('express');
-const fetchuser = require('../middlewares/fetchuser');
-const Group = require('../models/Group');
+const authenticateUser = require('../middlewares/authenticateUser');
 const Message = require('../models/Message');
-const User = require('../models/User');
 const router = express.Router();
 
-router.get('/fetchMessages/:groupId', fetchuser, async (req, res) => {
+router.get('/fetchMessages/:groupId', authenticateUser, async (req, res) => {
     try {
         let messages = await Message.find({ group: req.params.groupId }).populate('user', '_id name');
 
@@ -17,7 +15,7 @@ router.get('/fetchMessages/:groupId', fetchuser, async (req, res) => {
     }
 })
 
-router.post('/sendMessage', fetchuser, async (req, res) => {
+router.post('/sendMessage', authenticateUser, async (req, res) => {
     try {
         let message = await Message.create({
             messageText: req.body.message,

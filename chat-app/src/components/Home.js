@@ -2,7 +2,7 @@ import React from 'react'
 import Main from './main/Main'
 import SideBar from './sidebar/SideBar'
 import { useHistory } from "react-router-dom";
-import GroupProvider from '../contexts/GroupProvider';
+import GroupProvider from '../contexts/group/GroupProvider';
 
 export default function Home() {
 
@@ -24,16 +24,6 @@ export default function Home() {
                     </div>
                 </div>
             </GroupProvider>
-            {/* <Router>
-                <Switch>
-                    <Route exact path="/">
-                        <Main />
-                    </Route>
-                    <Route exact path="/groupinfo">
-                        <GroupInfo />
-                    </Route>
-                </Switch>
-            </Router> */}
         </>
     )
 }

@@ -2,10 +2,11 @@ import SignIn from './components/account/SignIn';
 import SignUp from './components/account/SignUp';
 import Home from './components/Home';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import UserProvider from './contexts/user/UserProvider';
 
 function App() {
   return (
-    <>
+    <UserProvider>
       <Router>
         <Switch>
           <Route exact path="/signin">
@@ -19,7 +20,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </>
+    </UserProvider>
   );
 }
 
