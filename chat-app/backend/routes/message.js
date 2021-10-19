@@ -5,30 +5,30 @@ const Message = require('../models/Message');
 const User = require('../models/User');
 const router = express.Router();
 
-router.get('/fetchMessages/:groupId', fetchuser, async (req, res) =>{
-    try{
-        let messages = await Message.find({group: req.params.groupId});
-        
-        res.json({success: true, messages});
+router.get('/fetchMessages/:groupId', fetchuser, async (req, res) => {
+    try {
+        let messages = await Message.find({ group: req.params.groupId }).populate('user', '_id name');
+
+        res.json({ success: true, messages });
 
     }
-    catch(error){
+    catch (error) {
         res.status(500).send("Internal Server Error");
     }
 })
 
-router.post('/sendMessage', fetchuser, async (req, res) =>{
-    try{
+router.post('/sendMessage', fetchuser, async (req, res) => {
+    try {
         let message = await Message.create({
             messageText: req.body.message,
             user: req.user.id,
             group: req.body.groupId
         });
-        
-        res.json({success: true, message});
+        message = await Message.find({ group: message.group }).populate('user', '_id name');
+        res.json({ success: true, message });
 
     }
-    catch(error){
+    catch (error) {
         res.status(500).send("Internal Server Error");
     }
 })
