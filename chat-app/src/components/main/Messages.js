@@ -13,8 +13,8 @@ export default function Messages() {
 
   return (
     <>
-      <div style={{ height: '83%', backgroundColor: '#dcdef7' }}>
-        {messages.map((message) =>{
+      <div style={{ height: '83%', backgroundColor: '#dcdef7', overflowY: 'auto' }}>
+        {messages.map((message) => {
           return <MessageItem key={message._id} message={message} />
         })}
       </div>
