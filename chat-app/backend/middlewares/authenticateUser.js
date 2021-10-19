@@ -1,7 +1,7 @@
 var jwt = require('jwt-then');
 const JWT_SECRET = 'Hibernate is like Mongoose (Do so)';
 
-const fetchuser = async (req, res, next) => {
+const authenticateUser = async (req, res, next) => {
     const token = req.header('authtoken');
     if (!token) {
         res.status(401).send({ error: "Please authenticate using a valid token" })
@@ -15,4 +15,4 @@ const fetchuser = async (req, res, next) => {
     }
 
 }
-module.exports = fetchuser;
+module.exports = authenticateUser;

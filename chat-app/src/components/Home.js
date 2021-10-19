@@ -1,15 +1,21 @@
-import React from 'react'
+import React ,{useContext, useEffect}from 'react'
 import Main from './main/Main'
 import SideBar from './sidebar/SideBar'
 import { useHistory } from "react-router-dom";
 import GroupProvider from '../contexts/group/GroupProvider';
+import UserContext from '../contexts/user/UserContext';
 
 export default function Home() {
-
+    const {fetchUser} = useContext(UserContext);
     let location = useHistory();
     if (!localStorage.getItem('authtoken')) {
         location.push('/signin');
     }
+    useEffect(() => {
+        fetchUser();
+        console.log("lsajkja");
+    },[])
+
     return (
         <>
             <GroupProvider>

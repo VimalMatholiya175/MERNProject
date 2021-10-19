@@ -36,6 +36,7 @@ router.post('/create', authenticateUser, [
         });
 
         await User.findOneAndUpdate({ _id: req.user.id}, {$push: {groups: group._id}});
+        group = await Group.findOne({_id: group._id}).populate('members','_id name');
 
         res.json({ success: true, group}); 
     }
@@ -61,7 +62,8 @@ router.post('/join', authenticateUser, [
             await Group.findOneAndUpdate({groupCode: req.body.groupCode}, {$push: {members: req.user.id}});
             await User.findOneAndUpdate({ _id: req.user.id}, {$push: {groups: group._id}});
         }
-
+        group = await Group.findOne({groupCode: req.body.groupCode}).populate('members','_id name');
+        
         res.json({ success: true, group}); 
     }
     catch (error) {
@@ -75,7 +77,7 @@ router.get('/fetchAllGroups', authenticateUser, async (req, res) =>{
         let user = await User.findOne({_id: req.user.id});
         let groupIds = user.groups;
 
-        let groups = await Group.find({_id: {$in: groupIds}});
+        let groups = await Group.find({_id: {$in: groupIds}}).populate('members','_id name');
 
         // for(let groupId of groupIds){
         //     let group = await Group.findOne({_id: groupId});

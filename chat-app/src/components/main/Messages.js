@@ -9,7 +9,7 @@ export default function Messages() {
   useEffect(() => {
     fetchMessages();
 
-  }, [currentGroup, messages])
+  }, [currentGroup])
 
   return (
     <>

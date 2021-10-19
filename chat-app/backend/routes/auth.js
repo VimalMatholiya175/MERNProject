@@ -3,6 +3,7 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jwt-then');
 const { body, validationResult } = require('express-validator');
+const authenticateUser = require('../middlewares/authenticateUser');
 
 const JWT_SECRET = "Hibernate is like Mongoose (Do so)";
 const router = express.Router();
@@ -64,11 +65,23 @@ router.post('/signin', [
 
         const authtoken = await jwt.sign(data, JWT_SECRET);
 
-        res.json({success : true, authtoken});
+        res.json({success : true, authtoken,user});
     }
     catch (error) {
         res.status(500).send("Internal Server Error");
       }
 })
+
+// router.get('/fetchUser', authenticateUser, async (req, res) => {
+//     try{
+//         let user = await User.findone({_id : req.user.id});
+//         res.json({success:true, user});
+//     }
+//     catch(error)
+//     {
+//         res.status(500).send("Internal Server Error");
+//     }
+// })
+
 
 module.exports = router;
