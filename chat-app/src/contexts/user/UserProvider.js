@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import UserContext from './UserContext'
 
 export default function UserProvider(props) {
+    const [user, setUser] = useState(null);
 
     const signUp = async (name, email, password) => {
         let response = await fetch("http://localhost:4099/auth/signup",
@@ -26,9 +27,21 @@ export default function UserProvider(props) {
         response = await response.json();
         return response;
     }
-    
+    const fetchUser = async () => {
+        // let response = await fetch("http://localhost:4099/auth/fetchUser",
+        //     {
+        //         method: 'GET',
+        //         headers: { 'authtoken': localStorage.getItem('authtoken') }
+        //     }
+        // );
+        // response = await response.json();
+        // console.log(response)
+        // if (response.success)
+        //     setUser(response.user);
+
+    }
     return (
-        <UserContext.Provider value={{ signUp, signIn }}>
+        <UserContext.Provider value={{ signUp, signIn, user,fetchUser }}>
             {props.children}
         </UserContext.Provider>
     )

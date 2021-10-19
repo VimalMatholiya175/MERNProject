@@ -20,7 +20,7 @@ export default function SendMessage() {
             <div className="d-flex align-items-center justify-content-between" style={{ height: '8%', backgroundColor: 'white' }}>
                 <input type="text" value={message} onChange={handleOnChange} className="form-control shadow-none rounded-pill mx-3" placeholder="Type a Message..." />
                 <div className="d-flex">
-                    <i onClick={handleOnClick} class="far fa-paper-plane me-4" style={{ fontSize: '21px', color: 'green' }}></i>
+                    <i onClick={handleOnClick} className="far fa-paper-plane me-4" style={{ fontSize: '21px', color: 'green' }}></i>
                     <i className="fas fa-paperclip me-4" style={{ fontSize: '21px', color: 'gray' }}></i>
                 </div>
             </div>
