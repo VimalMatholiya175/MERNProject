@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import GroupContext from '../../contexts/GroupContext'
+import GroupContext from '../../contexts/group/GroupContext'
 import MessageItem from './MessageItem';
 
 export default function Messages() {

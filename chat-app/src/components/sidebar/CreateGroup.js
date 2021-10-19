@@ -1,7 +1,6 @@
 import React, { useState, useContext, useRef } from 'react'
-import GroupContext from '../../contexts/GroupContext';
+import GroupContext from '../../contexts/group/GroupContext';
 import Modal from '../Modal';
-
 
 export default function CreateGroup() {
 
@@ -14,7 +13,7 @@ export default function CreateGroup() {
     }
     const handleOnClick = async (event) => {
         event.preventDefault();
-        createGroup(groupName);
+        await createGroup(groupName);
         setGroupName("");
         closeBtnRef.current.click();
     }

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import GroupContext from '../../contexts/GroupContext';
+import GroupContext from '../../contexts/group/GroupContext';
 
 
 export default function GroupItem(props) {

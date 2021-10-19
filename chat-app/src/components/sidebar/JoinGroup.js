@@ -1,5 +1,5 @@
 import React,{useState,useContext,useRef} from 'react'
-import GroupContext from '../../contexts/GroupContext';
+import GroupContext from '../../contexts/group/GroupContext';
 import Modal from '../Modal';
 
 export default function JoinGroup() {
@@ -13,11 +13,11 @@ export default function JoinGroup() {
     }
     const handleOnClick = async (event) => {
         event.preventDefault();
-        joinGroup(groupCode);
+        await joinGroup(groupCode);
         setGroupCode("");
         closeBtnRef.current.click();
-
     }
+    
     return (
         <>
             <Modal title="Join Group" id="join" closeBtnRef={closeBtnRef}>

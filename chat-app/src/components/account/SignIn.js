@@ -1,25 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link, useHistory } from "react-router-dom";
+import UserContext from '../../contexts/user/UserContext';
 
 export default function SignIn() {
 
+    const { signIn } = useContext(UserContext);
     const [user, setUser] = useState({email: "", password: ""});
     const [error, setError] = useState("");
     const location = useHistory();
 
     const handleOnChange = (event) => {
-        setUser({ ...user, [event.target.name]: event.target.value }); //Good
+        setUser({ ...user, [event.target.name]: event.target.value }); 
     }
     const handleOnClick = async (event) => {
         event.preventDefault();
-        let response = await fetch("http://localhost:4099/auth/signin",
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },            // Request headers. format is the identical to that accepted by the Headers constructor (see below)
-                body: JSON.stringify({email: user.email, password: user.password })
-            }
-        );
-        response = await response.json();
+        let response = await signIn(user.email, user.password);
         if(!response.success){
             setError(response.error);
         }
