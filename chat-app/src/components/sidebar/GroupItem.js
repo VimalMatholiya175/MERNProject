@@ -20,7 +20,7 @@ export default function GroupItem(props) {
     }
     return (
         <>
-            <div id={props.groupId} className={`h d-flex align-items-center ${currentGroup && currentGroup._id === props.groupId?'active-group':''}`}>
+            <div className={`d-flex align-items-center ${currentGroup && currentGroup._id === props.groupId?'active-group':''}`} style={{height: '65px'}}>
                 <h5 className="group-img">{findImageText()}</h5>
                 <h6 className="my-auto">{props.groupName}</h6>
             </div>

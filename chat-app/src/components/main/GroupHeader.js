@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import GroupContext from '../../contexts/GroupContext'
-import { Link } from 'react-router-dom'
+import GroupInfo from '../groupinfo/GroupInfo';
 
 export default function GroupHeader() {
-    
+
     const { currentGroup } = useContext(GroupContext);
 
     const findImageText = () => {
@@ -21,15 +21,15 @@ export default function GroupHeader() {
 
     return (
         <>
-            <div className="d-flex align-items-center justify-content-between" style={{ backgroundColor: '#5c5a8c',height: '9%', color: 'white' }}>
+            <div className="d-flex align-items-center justify-content-between" style={{ backgroundColor: '#5c5a8c', height: '9%', color: 'white' }}>
                 <div className="d-flex align-items-center">
                     <h5 className="group-img">{findImageText()}</h5>
                     <h5 className="my-auto">{currentGroup.groupName}</h5>
                 </div>
-                <Link className="bg-transparent" to="/groupinfo">
-                    <i className="fa fa-info-circle mx-3" style={{ fontSize: '28px', color: 'lightgrey' }}></i>
-                </Link>
+                <i class="fas fa-info-circle mx-3" style={{ fontSize: '28px', color: 'white' }} data-bs-toggle="offcanvas" data-bs-target="#group-info" aria-controls="group-info"></i>
             </div>
+            <GroupInfo />
+
         </>
     )
 }
