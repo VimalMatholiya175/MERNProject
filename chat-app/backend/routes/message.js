@@ -22,7 +22,7 @@ router.post('/sendMessage', authenticateUser, async (req, res) => {
             user: req.user.id,
             group: req.body.groupId
         });
-        message = await Message.find({ group: message.group }).populate('user', '_id name');
+        message = await Message.findOne({ _id: message._id }).populate('user', '_id name');
         res.json({ success: true, message });
 
     }

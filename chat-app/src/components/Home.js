@@ -6,14 +6,16 @@ import GroupProvider from '../contexts/group/GroupProvider';
 import UserContext from '../contexts/user/UserContext';
 
 export default function Home() {
+
     const {fetchUser} = useContext(UserContext);
-    let location = useHistory();
+    const location = useHistory();
+
     if (!localStorage.getItem('authtoken')) {
         location.push('/signin');
     }
+    
     useEffect(() => {
         fetchUser();
-        console.log("lsajkja");
     },[])
 
     return (

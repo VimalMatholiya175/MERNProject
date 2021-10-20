@@ -72,16 +72,16 @@ router.post('/signin', [
       }
 })
 
-// router.get('/fetchUser', authenticateUser, async (req, res) => {
-//     try{
-//         let user = await User.findone({_id : req.user.id});
-//         res.json({success:true, user});
-//     }
-//     catch(error)
-//     {
-//         res.status(500).send("Internal Server Error");
-//     }
-// })
+router.get('/fetchUser', authenticateUser, async (req, res) => {
+    try{
+        let user = await User.findOne({_id : req.user.id});
+        res.json({success:true, user});
+    }
+    catch(error)
+    {
+        res.status(500).send("Internal Server Error");
+    }
+})
 
 
 module.exports = router;

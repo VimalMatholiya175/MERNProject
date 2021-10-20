@@ -17,6 +17,12 @@ a{
   border-color: rgb(226, 219, 219);
 } 
 
+textarea{
+  resize: none;
+  height:80%;
+  white-space:pre-line;
+}
+
 /* SignIn or SignUp */
 
 .acontainer{
