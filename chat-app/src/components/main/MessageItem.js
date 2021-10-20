@@ -20,7 +20,7 @@ export default function MessageItem(props) {
               {findTime()}
             </small>
           </div>
-          <span className="d-block">
+          <span className="d-block" style={{maxWidth: '800px', wordWrap: 'break-word'}}>
             {message.messageText}
           </span>
         </div>
