@@ -5,8 +5,33 @@ const router = express.Router();
 
 router.get('/fetchMessages/:groupId', authenticateUser, async (req, res) => {
     try {
-        let messages = await Message.find({ group: req.params.groupId }).populate('user', '_id name');
+        // let msgs = await Message.find({ group: req.params.groupId });
+        
+        // let ids = [];
+        // for(var item of msgs){
+        //     ids.push(item._id);
+        // }
+        
+        // let x = await Message.aggregate([
+        //     {"$match": {_id: {$in: ids }}},
+        //     {"$lookup": {"from": "Users", "localField": 'user', "foreignField": '_id', "as": 'user'}},
+        //     {"$group": 
+        //         {"_id": 
+        //             {
+        //                 "day": {"$dayOfMonth": "$messageDate"},
+        //                 "month": {"$month": "$messageDate"},
+        //                 "year": {"$year": "$messageDate"}
+        //             },
+        //          "messageList": {"$push": "$$ROOT"}
+        //         }
+        //     }
+        // ]);
 
+        // await Message.populate(x, {path: "user"});
+
+        // console.log(x[0].messageList);
+
+        let messages = await Message.find({ group: req.params.groupId }).populate('user', '_id name');
         res.json({ success: true, messages });
 
     }

@@ -11,12 +11,12 @@ export default function MessageItem(props) {
   return (
     <>
       <div className="d-block" id={message.messageText}>
-        <div className="d-inline-block mt-2 ms-3 py-1 px-2" style={{ borderRadius: '7px', color: 'black', backgroundColor: 'rgb(237 239 255)' }}>
+        <div className="d-inline-block bg-white text-dark mt-2 ms-3 py-1 px-2" style={{ borderRadius: '7px', backgroundColor: 'rgb(237 239 255)' }}>
           <div className="d-flex justify-content-between">
-            <small style={{ color: 'rgb(47, 45, 82)', letterSpacing: '0.8px', fontWeight: 'bold' }}>
+            <small>
               {message.user.name}
             </small>
-            <small className="ms-3" style={{ fontSize: '12px' }}>
+            <small className="ms-3" style={{ fontSize: '13px' }}>
               {findTime()}
             </small>
           </div>

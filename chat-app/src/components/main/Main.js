@@ -5,15 +5,17 @@ import Messages from './Messages'
 import SendMessage from './SendMessage'
 
 export default function Main() {
+    
     const { currentGroup } = useContext(GroupContext);
 
     return (
         <>
-            {currentGroup != null && <div className="h-100" >
-                <GroupHeader/>
-                <Messages/>
-                <SendMessage/>
-            </div>
+            {currentGroup != null &&
+                <div className="h-100" >
+                    <GroupHeader />
+                    <Messages />
+                    <SendMessage />
+                </div>
             }
         </>
     )

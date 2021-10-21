@@ -8,11 +8,11 @@ export default function Members() {
     const { members } = currentGroup;
 
     return (
-        <div className="bg-white" style={{ height: '60%', overflowY: 'auto' }}>
-            <h5 className="mx-3 text-primary">Members</h5>
+        <>
+            <h6 className="text-light rounded-3 p-2" style={{ backgroundColor: '#2f2d52'}}>Members<span className="mx-1">({members.length})</span></h6>
             {members.map((member) =>
                 <MemberItem key={member._id} id={member._id} name={member.name} />
             )}
-        </div>
+        </>
     )
 }
