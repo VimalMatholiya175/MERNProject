@@ -5,35 +5,31 @@ const router = express.Router();
 
 router.get('/fetchMessages/:groupId', authenticateUser, async (req, res) => {
     try {
-        // let msgs = await Message.find({ group: req.params.groupId });
+        let messages = await Message.find({ group: req.params.groupId }, {_id: 1 });
         
-        // let ids = [];
-        // for(var item of msgs){
-        //     ids.push(item._id);
-        // }
+        let ids = [];
+        for(let item of messages){
+            ids.push(item._id);
+        }
         
-        // let x = await Message.aggregate([
-        //     {"$match": {_id: {$in: ids }}},
-        //     {"$lookup": {"from": "Users", "localField": 'user', "foreignField": '_id', "as": 'user'}},
-        //     {"$group": 
-        //         {"_id": 
-        //             {
-        //                 "day": {"$dayOfMonth": "$messageDate"},
-        //                 "month": {"$month": "$messageDate"},
-        //                 "year": {"$year": "$messageDate"}
-        //             },
-        //          "messageList": {"$push": "$$ROOT"}
-        //         }
-        //     }
-        // ]);
+        messages = await Message.aggregate([
+            {"$match": {_id: {$in: ids }}},
+            {"$lookup": {"from": "users", "localField": "user", "foreignField": "_id", "as": "user"}},
+            {"$group": 
+                {"_id": 
+                    {
+                        "day": {"$dayOfMonth": "$messageDate"},
+                        "month": {"$month": "$messageDate"},
+                        "year": {"$year": "$messageDate"}
+                    },
+                 "messageList": {"$push": "$$ROOT"}
+                }
+            },
+            {"$project": {"_id": 0, "date": "$_id", "messageList": "$messageList"}},
+            {"$sort": {"date": 1}}
+        ]);
 
-        // await Message.populate(x, {path: "user"});
-
-        // console.log(x[0].messageList);
-
-        let messages = await Message.find({ group: req.params.groupId }).populate('user', '_id name');
         res.json({ success: true, messages });
-
     }
     catch (error) {
         res.status(500).send("Internal Server Error");
@@ -47,9 +43,12 @@ router.post('/sendMessage', authenticateUser, async (req, res) => {
             user: req.user.id,
             group: req.body.groupId
         });
-        message = await Message.findOne({ _id: message._id }).populate('user', '_id name');
+        message = await Message.aggregate([
+            {"$match": {"_id": message._id}},
+            {"$lookup": {"from": "users", "localField": "user", "foreignField": "_id", "as": "user"}}
+        ])
+        
         res.json({ success: true, message });
-
     }
     catch (error) {
         res.status(500).send("Internal Server Error");
