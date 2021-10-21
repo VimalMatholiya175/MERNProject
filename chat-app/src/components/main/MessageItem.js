@@ -10,10 +10,10 @@ export default function MessageItem(props) {
 
   return (
     <>
-      <div className="d-block" id={message.messageText}>
+      <div className="d-block">
         <div className="d-inline-block bg-white text-dark mt-2 ms-3 py-1 px-2" style={{ borderRadius: '7px', backgroundColor: 'rgb(237 239 255)' }}>
           <div className="d-flex justify-content-between">
-            <small>
+            <small style={{color:'rgb(47, 45, 82)'}}>
               {message.user.name}
             </small>
             <small className="ms-3" style={{ fontSize: '13px' }}>
