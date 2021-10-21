@@ -45,7 +45,10 @@ export default function GroupProvider(props) {
         );
         response = await response.json();
         if (response.success) {
-            setGroups(groups.concat(response.group));
+            let groupExists = groups.find((g) => g._id === response.group._id);
+            if(!groupExists){
+                setGroups(groups.concat(response.group));
+            }
             setCurrentGroup(response.group);
         }
     }
@@ -60,12 +63,33 @@ export default function GroupProvider(props) {
         );
         response = await response.json();
         if (response.success) {
-            setMessages(messages.concat(response.message));
+            const date = new Date(response.message[0].messageDate.toString());
+            if(messages.length === 0){
+               setMessages([{
+                   date: {
+                       day: date.getDate(),
+                       month: date.getMonth() + 1,
+                       year: date.getFullYear() 
+                   },
+                   messageList: response.message
+               }]);
+            }
+            else{
+                let newMessages = JSON.parse(JSON.stringify(messages));
+                for(let item of newMessages){
+                    if(item.date.day === date.getDate() 
+                    && item.date.month === date.getMonth() + 1 
+                    && item.date.year === date.getFullYear())
+                    {
+                        item.messageList = item.messageList.concat(response.message[0]);
+                    }
+                }
+                setMessages(newMessages);
+            }
         }
     }
 
     const fetchMessages = async () => {
-        console.log(currentGroup);
         let response = await fetch(`http://localhost:4099/message/fetchMessages/${currentGroup._id}`,
             {
                 method: 'GET',
@@ -73,7 +97,6 @@ export default function GroupProvider(props) {
             }
         );
         response = await response.json();
-        console.log(response);
         if (response.success) {
             setMessages(response.messages);
         }
