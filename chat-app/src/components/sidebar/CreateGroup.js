@@ -22,9 +22,10 @@ export default function CreateGroup() {
             <Modal title="Create Group" id="create" closeBtnRef={closeBtnRef}>
                 <div className="mb-3">
                     <label htmlFor="groupname" className="form-label">Group Name</label>
-                    <input type="text" className="form-control" value={groupName} onChange={handleOnChange} id="groupname" required minLength={3} maxLength={20} />
+                    <input type="text" className="form-control" value={groupName} onChange={handleOnChange} id="groupname" required/>
+                    <small className="mt-2 text-muted">Group name must 3 to 20 character long</small>
                 </div>
-                <button type="button" className="btn btn-primary shadow-none" onClick={handleOnClick}>Create</button>
+                <button type="button" disabled={groupName.length < 3 || groupName.length >20 } className="btn btn-primary shadow-none" onClick={handleOnClick}>Create</button>
             </Modal>
         </>
     )

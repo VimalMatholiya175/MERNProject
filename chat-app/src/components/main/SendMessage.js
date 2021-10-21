@@ -18,11 +18,11 @@ export default function SendMessage() {
     return (
         <>
             <div className="d-flex align-items-center justify-content-between" style={{ height: '8%', backgroundColor: 'white' }}>
-                <textarea type="text" value={message} onChange={handleOnChange} className="form-control shadow-none mx-3" placeholder="Type a Message..." />
                 <div className="d-flex">
-                    <i onClick={handleOnClick} className="far fa-paper-plane me-4" style={{ fontSize: '21px', color: 'green' }}></i>
-                    <i className="fas fa-paperclip me-4" style={{ fontSize: '21px', color: 'gray' }}></i>
+                    <i className="fas fa-paperclip ms-4" style={{ color: 'gray' }}></i>
+                    <i onClick={handleOnClick} className="far fa-paper-plane ms-4" style={{ color: 'green' }}></i>
                 </div>
+                <input type="text" value={message} onChange={handleOnChange} className="form-control message-input shadow-none mx-2" placeholder="Type a Message..." />
             </div>
         </>
     )

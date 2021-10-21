@@ -1,7 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Open Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,21 +10,15 @@ a{
   text-decoration: none;
 }
 
-.form-control:focus{
-  border-color: rgb(226, 219, 219);
-} 
-.form-control{
-  border-color: rgb(226, 219, 219);
+.message-input:focus, .search-input:focus {
+  border-color: white;
 } 
 
-textarea{
-  resize: none;
-  height:80%;
-  white-space:pre-line;
-}
+.message-input, .search-input{
+  border-color: white;
+} 
 
 /* SignIn or SignUp */
-
 .acontainer{
   height: 100vh;
   width: 100vw;
@@ -33,18 +27,21 @@ textarea{
   justify-content: center;
   background-color: #2f2d52;
 }
+
 .form{
   display: block;
   width: 400px;
   background-color: white;
   border-radius: 11px;
 }
+
 h1{
   margin: 40px;
   margin-bottom : 20px;
   color: #1c1f22;
   text-align: center;
 }
+
 input:not(.form-control){
   display: block;
   width: 80%;
@@ -56,13 +53,13 @@ input:not(.form-control){
   background-color:#eef5f3;
   font-size: medium;
 }
+
 input:not(.form-control):focus{
   outline: none;
   box-shadow: 0px 0px 7px #3c3a5f;;
 }
 
 /* SignUp */
-
 input.btn-small{
   display: inline-block;
   margin: 30px auto;
@@ -77,19 +74,21 @@ input.btn-small{
   cursor: pointer;
   border-radius: 11px;
 }
+
 .btn-small:hover{
   background-color: #2f2d52;
 }
+
 input[type="submit"]{
   margin-right: 10%;
   float: right;
 }
+
 input[type="reset"]{
   margin-left: 10%;
 }
 
 /* SignIn */
-
 input.btn-large{
   display: block;
   margin: 10px auto;
@@ -105,18 +104,17 @@ input.btn-large{
   cursor: pointer;
   border-radius: 11px;
 }
+
 .btn-large:hover{
   background-color: #2f2d52;
 }
+
 .link{
   text-align: center;
   margin:20px 0px ;
 }
 
-
 /* Home */
-
-
 .group-img {
   margin: 0px 15px;
   width: 45px;
@@ -128,34 +126,42 @@ input.btn-large{
   background-color: white;
   color: #212529;
 }
+
 .all-groups{
   background-color: #3c3a5f;
   color: rgb(245, 234, 234);
   height: 84%; 
   overflow-y: auto;
 }
+
 .active-group{
   background-color: rgb(47, 45, 82);
 }
+
 span, i{
   cursor: pointer;
 }
+
+i{
+  font-size: 23px;
+}
+
 .user-img{
   margin: 0px 15px;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #212529;
-  color: white;
+  background-color: #e0e0e0;
 }
 
 ::-webkit-scrollbar {
   width: 12px;
   background-color: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   border-radius: 30px;

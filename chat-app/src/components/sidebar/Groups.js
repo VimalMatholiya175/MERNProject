@@ -5,6 +5,7 @@ import GroupItem from './GroupItem';
 export default function Groups() {
 
     const { groups, fetchAllGroups, setCurrentGroup } = useContext(GroupContext);
+    
     useEffect(() => {
         fetchAllGroups();
          // eslint-disable-next-line

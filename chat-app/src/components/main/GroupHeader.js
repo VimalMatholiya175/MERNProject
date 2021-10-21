@@ -16,7 +16,6 @@ export default function GroupHeader() {
             imageText = arr[0][0] + arr[1][0];
         }
         return imageText.toUpperCase();
-
     }
 
     return (
@@ -26,10 +25,9 @@ export default function GroupHeader() {
                     <h5 className="group-img">{findImageText()}</h5>
                     <h5 className="my-auto">{currentGroup.groupName}</h5>
                 </div>
-                <i className="fas fa-info-circle mx-3" style={{ fontSize: '28px', color: 'white' }} data-bs-toggle="offcanvas" data-bs-target="#group-info" aria-controls="group-info"></i>
+                <i className="fas fa-info-circle mx-3" style={{ color: 'white' }} data-bs-toggle="offcanvas" data-bs-target="#group-info" aria-controls="group-info"></i>
             </div>
             <GroupInfo />
-
         </>
     )
 }
