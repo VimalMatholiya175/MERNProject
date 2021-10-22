@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "6171887e9a33a610edeba44d"
+  },
+  "groupName": "React Project Q&A",
+  "owner": {
+    "$oid": "6171882c9a33a610edeba447"
+  },
+  "groupCode": "vvwodx",
+  "members": [
+    {
+      "$oid": "6171882c9a33a610edeba447"
+    },
+    {
+      "$oid": "6171867b9a33a610edeba435"
+    },
+    {
+      "$oid": "617186999a33a610edeba438"
+    },
+    {
+      "$oid": "617186c59a33a610edeba43b"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718a499a33a610edeba46c"
+  },
+  "groupName": "Lecture Discussion",
+  "owner": {
+    "$oid": "6171882c9a33a610edeba447"
+  },
+  "groupCode": "q93dgw",
+  "members": [
+    {
+      "$oid": "6171882c9a33a610edeba447"
+    },
+    {
+      "$oid": "6171867b9a33a610edeba435"
+    },
+    {
+      "$oid": "617186999a33a610edeba438"
+    },
+    {
+      "$oid": "617186c59a33a610edeba43b"
+    },
+    {
+      "$oid": "61718fb69a33a610edeba510"
+    }
+  ],
+  "__v": 0
+}]

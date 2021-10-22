@@ -12,7 +12,7 @@ export default function MemberItem(props) {
                 <i className="fas fa-user" style={{color: 'white'}}></i>
               </div>
               <h6 className="my-auto">{props.name}</h6>
-              <h6 className="mx-5 text-primary my-auto">{currentGroup.owner === props.id ? 'admin' : ''}</h6>
+              <h6 className="mx-5 text-primary my-auto">{currentGroup.owner === props.id ? 'Owner' : ''}</h6>
           </div>
       </>
   )
