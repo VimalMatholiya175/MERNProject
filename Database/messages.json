@@ -1,0 +1,151 @@
+[{
+  "_id": {
+    "$oid": "61718beb9a33a610edeba4be"
+  },
+  "messageText": "Hello, Everyone.. We will be discussing here about React project.",
+  "user": {
+    "$oid": "6171882c9a33a610edeba447"
+  },
+  "group": {
+    "$oid": "6171887e9a33a610edeba44d"
+  },
+  "messageDate": {
+    "$date": "2021-10-21T15:48:59.912Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718c879a33a610edeba4d0"
+  },
+  "messageText": "So, feel free to ask any Question..",
+  "user": {
+    "$oid": "6171882c9a33a610edeba447"
+  },
+  "group": {
+    "$oid": "6171887e9a33a610edeba44d"
+  },
+  "messageDate": {
+    "$date": "2021-10-21T15:51:35.743Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718cf49a33a610edeba4d5"
+  },
+  "messageText": "Sir, When we need to submit our project? ",
+  "user": {
+    "$oid": "617186c59a33a610edeba43b"
+  },
+  "group": {
+    "$oid": "6171887e9a33a610edeba44d"
+  },
+  "messageDate": {
+    "$date": "2021-10-21T15:53:24.611Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718d349a33a610edeba4de"
+  },
+  "messageText": "I will send deadline information in this group.",
+  "user": {
+    "$oid": "6171882c9a33a610edeba447"
+  },
+  "group": {
+    "$oid": "6171887e9a33a610edeba44d"
+  },
+  "messageDate": {
+    "$date": "2021-10-21T15:54:28.272Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718d429a33a610edeba4e1"
+  },
+  "messageText": "ok sir.",
+  "user": {
+    "$oid": "617186c59a33a610edeba43b"
+  },
+  "group": {
+    "$oid": "6171887e9a33a610edeba44d"
+  },
+  "messageDate": {
+    "$date": "2021-10-21T15:54:42.847Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718d9d9a33a610edeba4ea"
+  },
+  "messageText": "Can we do project alone?",
+  "user": {
+    "$oid": "6171867b9a33a610edeba435"
+  },
+  "group": {
+    "$oid": "6171887e9a33a610edeba44d"
+  },
+  "messageDate": {
+    "$date": "2021-10-21T15:56:13.394Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718e9f9a33a610edeba4f5"
+  },
+  "messageText": "Your tomorrow's lecture is scheduled at 10 AM.",
+  "user": {
+    "$oid": "6171882c9a33a610edeba447"
+  },
+  "group": {
+    "$oid": "61718a499a33a610edeba46c"
+  },
+  "messageDate": {
+    "$date": "2021-10-21T16:00:31.133Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718eb59a33a610edeba4fa"
+  },
+  "messageText": "ok sir..",
+  "user": {
+    "$oid": "6171867b9a33a610edeba435"
+  },
+  "group": {
+    "$oid": "61718a499a33a610edeba46c"
+  },
+  "messageDate": {
+    "$date": "2021-10-21T16:00:53.147Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718f089a33a610edeba4ff"
+  },
+  "messageText": "could you please share pdf of today's lecture ?",
+  "user": {
+    "$oid": "617186c59a33a610edeba43b"
+  },
+  "group": {
+    "$oid": "61718a499a33a610edeba46c"
+  },
+  "messageDate": {
+    "$date": "2021-10-21T16:02:16.799Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718f329a33a610edeba508"
+  },
+  "messageText": "Ok, i'll do that.",
+  "user": {
+    "$oid": "6171882c9a33a610edeba447"
+  },
+  "group": {
+    "$oid": "61718a499a33a610edeba46c"
+  },
+  "messageDate": {
+    "$date": "2021-10-21T16:02:58.895Z"
+  },
+  "__v": 0
+}]

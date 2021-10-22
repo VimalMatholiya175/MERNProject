@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "6171867b9a33a610edeba435"
+  },
+  "name": "Kenil Gopani",
+  "email": "kenil@gmail.com",
+  "password": "$2a$10$c0cD946edrxcV1qS7jhWuew.NlD8fcK56AJ6QLJaxZRf/HweFKUay",
+  "groups": [
+    {
+      "$oid": "6171887e9a33a610edeba44d"
+    },
+    {
+      "$oid": "61718a499a33a610edeba46c"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617186999a33a610edeba438"
+  },
+  "name": "Gopal Malaviya",
+  "email": "gopal@gmail.com",
+  "password": "$2a$10$wddj0Kxbeg6STXeVFbUbf.1pmgKd.QfSMYeFGCJR7A6fUXiJYco8W",
+  "groups": [
+    {
+      "$oid": "6171887e9a33a610edeba44d"
+    },
+    {
+      "$oid": "61718a499a33a610edeba46c"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617186c59a33a610edeba43b"
+  },
+  "name": "Vimal Matholiya",
+  "email": "vimal@gmail.com",
+  "password": "$2a$10$CRX7PaiYZCbK/c1j6F5NreCDMs.mpu9AkUeqD3aY/bBaKBIuibSqS",
+  "groups": [
+    {
+      "$oid": "61718a499a33a610edeba46c"
+    },
+    {
+      "$oid": "6171887e9a33a610edeba44d"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6171882c9a33a610edeba447"
+  },
+  "name": "Prof. Josh Hazelwood",
+  "email": "josh@gmail.com",
+  "password": "$2a$10$w.ycZyI65X4K2g.WQp76DeoDgwH66uN43hfSVCkRxYaGjwNOhPO1y",
+  "groups": [
+    {
+      "$oid": "6171887e9a33a610edeba44d"
+    },
+    {
+      "$oid": "61718a499a33a610edeba46c"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61718fb69a33a610edeba510"
+  },
+  "name": "Cheteshewar Pujara",
+  "email": "pujara@gmail.com",
+  "password": "$2a$10$RvjUf6Q.wGb39.UBNY7hFO0o.pmvKCDhrz5aQCTUZ/Z4uawJGvAZC",
+  "groups": [
+    {
+      "$oid": "61718a499a33a610edeba46c"
+    }
+  ],
+  "__v": 0
+}]

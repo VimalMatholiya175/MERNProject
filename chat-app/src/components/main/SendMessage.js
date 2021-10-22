@@ -15,6 +15,13 @@ export default function SendMessage() {
         setMessage("");
     }
 
+ 
+    const handleOnEnter = (event) =>{
+        if(event.key === 'Enter')
+            handleOnClick();
+    }
+
+
     return (
         <>
             <div className="d-flex align-items-center justify-content-between" style={{ height: '8%', backgroundColor: 'white' }}>
@@ -22,7 +29,7 @@ export default function SendMessage() {
                     <i className="fas fa-paperclip ms-4" style={{ color: 'gray' }}></i>
                     <i onClick={handleOnClick} className="far fa-paper-plane ms-4" style={{ color: 'green' }}></i>
                 </div>
-                <input type="text" value={message} onChange={handleOnChange} className="form-control message-input shadow-none mx-2" placeholder="Type a Message..." />
+                <input id="mytxt" type="text" value={message} onChange={handleOnChange} onKeyDown={handleOnEnter} className="form-control message-input shadow-none mx-2" placeholder="Type a Message..." />
             </div>
         </>
     )
